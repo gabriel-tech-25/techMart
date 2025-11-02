@@ -51,10 +51,17 @@ a {
     text-decoration: none;
     color: #000;
 }
-main{
-    width: 90%;
-    margin:0 auto;
+
+img {
+    display: block;
+    width: 100%;
 }
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
 /* nabvar */
 
 #sidebar-active {
@@ -121,14 +128,16 @@ li input {
 #sidebar-active:checked~.links-container {
     transform: translateX(0);
 }
-.open-sidebar-button{
+
+.open-sidebar-button {
     width: 100%;
-    background-color:var(--light);
+    background-color: var(--light);
     position: fixed;
     top: 0;
     left: 0;
     padding: .5rem;
 }
+
 .open-sidebar-button,
 .close-sidebar-button {
     display: block;
@@ -166,7 +175,8 @@ li input {
         width: auto;
         text-align: initial;
     }
-    li input{
+
+    li input {
         font-size: 1.2rem;
     }
 }
@@ -175,8 +185,9 @@ li input {
     li {
         font-size: 1.8rem;
     }
-    ul{
-         gap: 4rem;
+
+    ul {
+        gap: 4rem;
     }
 }
 
@@ -266,19 +277,21 @@ li input {
 }
 
 /* productos */
-.productos {
+.productos,
+.novedades {
     text-align: center;
 }
 
 .producto {
-    width: 33rem;
+    width: 30rem;
     /* igual al tamaño de la imagen */
     height: 50rem;
     /* del alto del card completo */
 
 }
 
-.producto-contenedor {
+.producto-contenedor,
+.novedades-contenedor {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,11 +316,13 @@ li input {
     object-fit: cover;
 }
 
-.producto-title {
+.producto-title,
+.novedad-title {
     margin: 0;
 }
 
-.producto-p {
+.producto-p,
+.novedad-p {
     margin: 0;
     font-size: 1.8rem;
     color: #666;
@@ -318,7 +333,8 @@ li input {
         padding: 0;
     }
 
-    .producto-contenedor {
+    .producto-contenedor,
+    .novedades-contenedor {
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -331,3 +347,22 @@ li input {
 }
 
 /* novedades */
+@media (min-width: 768px) {
+    .novedades-contenedor {
+        justify-content: flex-start;
+    }
+
+    .novedad {
+        width: 50rem;
+        /* igual al tamaño de la imagen */
+        height: 60rem;
+        /* del alto del card completo */
+    }
+
+    .novedad-img {
+        border-radius: 1rem;
+        width: 40rem;
+        height: 40rem;
+        object-fit: cover;
+    }
+}
