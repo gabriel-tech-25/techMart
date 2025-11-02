@@ -2,6 +2,7 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
     /* 1rem = 10px */
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -25,9 +26,8 @@ body {
 
 /* Globales */
 h1,
-h2,
-h3 {
-    margin: 0 0 5rem 0;
+h2{
+    margin: 0 0 4rem 0;
 }
 
 h1 {
@@ -41,12 +41,15 @@ h2 {
 
 h3 {
     font-size: 2rem;
+    margin-bottom: 0;
 }
 
 li {
     list-style: none;
 }
-
+p{
+   margin: 0;
+}
 a {
     text-decoration: none;
     color: #000;
@@ -76,7 +79,7 @@ main {
     height: 100vh;
     flex-direction: column;
     padding: 2rem;
-    z-index: 1;
+    z-index: 2;
     transform: translateX(-100%);
     transition: transform .3s ease;
 }
@@ -133,6 +136,7 @@ li input {
     width: 100%;
     background-color: var(--light);
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     padding: .5rem;
@@ -193,19 +197,30 @@ li input {
 
 /* hero */
 .hero {
+    top: 2rem;
+    position: relative;
     min-height: 80vh;
-    background: url('../img/3.png');
-    background-position: center;
-    background-size: cover;
+    background: url('../img/3.png') center/cover no-repeat;
     border-radius: 1rem;
     margin: 1rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
-
+}
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 1rem;
 }
 
 .hero-container {
+    position: relative;
+    z-index: 1;
     text-align: center;
 }
 
@@ -281,7 +296,9 @@ li input {
 .novedades {
     text-align: center;
 }
-
+.productos h2{
+    margin-top: 3rem;
+}
 .producto {
     width: 30rem;
     /* igual al tamaño de la imagen */
@@ -291,7 +308,8 @@ li input {
 }
 
 .producto-contenedor,
-.novedades-contenedor {
+.novedades-contenedor,
+.ofertas-contenedor {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -316,14 +334,10 @@ li input {
     object-fit: cover;
 }
 
-.producto-title,
-.novedad-title {
-    margin: 0;
-}
-
 .producto-p,
-.novedad-p {
-    margin: 0;
+.novedad-p,
+.oferta-p {
+    margin-bottom: 3rem;
     font-size: 1.8rem;
     color: #666;
 }
@@ -364,5 +378,54 @@ li input {
         width: 40rem;
         height: 40rem;
         object-fit: cover;
+    }
+}
+
+/* ofertas */
+.oferta{
+    padding: 2rem;
+}
+.oferta-background{
+    border-radius: 1rem;
+}
+.oferta-background{
+    background-color: #205e55;
+}
+.oferta-background--two{
+    background-color:#2d5c69;
+}
+.oferta-img{
+    color: #fff;
+    width: 30rem;
+    height: 30rem;
+}
+.oferta-link{
+    background-color:#1177ee;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.oferta-link:hover{
+    background-color: #1166ee;
+}
+.oferta-link:focus{
+    background-color: #2277ff;
+}
+.oferta-p{
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    .ofertas-contenedor{
+        align-items: flex-start;
+    }
+    .oferta{
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+    .oferta-block{
+        text-align: start;
     }
 }
