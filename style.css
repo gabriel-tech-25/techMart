@@ -204,7 +204,7 @@ li input {
     top: 2rem;
     position: relative;
     min-height: 80vh;
-    background: url('./img/3.png') center/cover no-repeat;
+    background: url('/img/3.png') center/cover no-repeat;
     border-radius: 1rem;
     margin: 1rem auto;
     display: flex;
@@ -225,7 +225,6 @@ li input {
 
 .hero-container {
     position: relative;
-    z-index: 1;
     text-align: center;
 }
 
