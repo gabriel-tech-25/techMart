@@ -377,6 +377,9 @@ li input {
 }
 
 /* novedades */
+.novedad-img{
+     border-radius: 1rem;
+}
 @media (min-width: 768px) {
     .novedades-contenedor {
         justify-content: flex-start;
@@ -390,7 +393,6 @@ li input {
     }
 
     .novedad-img {
-        border-radius: 1rem;
         width: 40rem;
         height: 40rem;
         object-fit: cover;
