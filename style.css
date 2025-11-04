@@ -334,7 +334,9 @@ li input {
     overflow-x: auto;
 }
 
-.producto-contenedor::-webkit-scrollbar {
+.producto-contenedor::-webkit-scrollbar,
+.novedades-contenedor::-webkit-scrollbar,
+.ofertas-contenedor::-webkit-scrollbar {
     display: none;
     /* Oculta scrollbar en móviles */
 }
@@ -377,9 +379,10 @@ li input {
 }
 
 /* novedades */
-.novedad-img{
-     border-radius: 1rem;
+.novedad-img {
+    border-radius: 1rem;
 }
+
 @media (min-width: 768px) {
     .novedades-contenedor {
         justify-content: flex-start;
