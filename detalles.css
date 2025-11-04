@@ -1,0 +1,111 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111418;
+}
+
+/* ========== HEADER ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.header__brand { display: flex; align-items: center; gap: 8px; }
+.header__logo {
+  width: 20px;
+  height: 20px;
+  background: #000;
+  border-radius: 50%;
+}
+.header__title { font-size: 18px; font-weight: bold; }
+
+.header__actions { display: flex; gap: 8px; align-items: center; }
+
+.header__search {
+  background: #f0f2f4;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  width: 120px;
+}
+.header__btn {
+  background: #f0f2f4;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.header__avatar {
+  width: 36px;
+  height: 36px;
+  background-image: url('img/account_circle_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg');
+  background-size: cover;
+  border-radius: 50%;
+}
+
+/* ========== PRODUCT ========== */
+.product {
+  padding: 12px;
+}
+.product__breadcrumb {
+  color: #617589;
+  font-size: 14px;
+}
+.product__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Gallery */
+.product__gallery {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+.product__image {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+.product__image--main { grid-column: span 2; padding-top: 60%; }
+
+/* Info */
+.product__price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+.product__description {
+  margin: 10px 0;
+  color: #555;
+}
+.product__btn {
+  background: #111418;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* ========== DESKTOP ========== */
+@media (min-width: 768px) {
+  .product {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .product__gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
